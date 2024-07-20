@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Temperature Analysis</h1>
+    <div class="dropdown">
+        <button class="dropbtn">Select Analysis</button>
+        <div class="dropdown-content">
+            <a href="{{ url_for('temperature_histogram') }}">Temperature Histogram</a>
+            <a href="{{ url_for('temperature_time_series') }}">Temperature Time Series</a>
+        </div>
+    </div>
+{% endblock %}
