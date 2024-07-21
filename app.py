@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 import pickle
-from map_box import create_plot, create_temperature_histogram, create_temperature_time_series
+from map_box import create_plot, avg_global_temp, hottest_countries, coldest_countries, choro_map
 
 app = Flask(__name__)
 
@@ -29,15 +29,26 @@ def interactive():
 def temp_analysis():
     return render_template('temp_analysis.html')
 
-@app.route('/temperature-histogram')
-def temperature_histogram():
-    plot = create_temperature_histogram()
+@app.route('/gauge-plot')
+def gauge_plot():
+    plot = avg_global_temp()
     return render_template('plot.html', plot=plot)
 
-@app.route('/temperature-time-series')
-def temperature_time_series():
-    plot = create_temperature_time_series()
+@app.route('/bar-plot')
+def bar_plot():
+    plot = hottest_countries()
     return render_template('plot.html', plot=plot)
+
+@app.route('/bar-plot2')
+def bar_plot2():
+    plot = coldest_countries()
+    return render_template('plot.html', plot=plot)
+
+@app.route('/map')
+def map():
+    plot = choro_map()
+    return render_template('plot.html', plot=plot)
+    
 
 if __name__ == '__main__':
     app.run(debug=True)

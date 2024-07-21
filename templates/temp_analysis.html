@@ -4,8 +4,10 @@
     <div class="dropdown">
         <button class="dropbtn">Select Analysis</button>
         <div class="dropdown-content">
-            <a href="{{ url_for('temperature_histogram') }}">Temperature Histogram</a>
-            <a href="{{ url_for('temperature_time_series') }}">Temperature Time Series</a>
+            <a href="{{ url_for('gauge_plot') }}">Avg Global Temmperature</a>
+            <a href="{{ url_for('bar_plot') }}">Hottest Countries</a>
+            <a href="{{ url_for('bar_plot2') }}">Coldest Countries</a>
+            <a href="{{ url_for('map') }}">Choropleth Map</a>
         </div>
     </div>
 {% endblock %}
