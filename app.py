@@ -1,24 +1,13 @@
 from flask import Flask, render_template
-import pickle
 from map_box import create_plot, avg_global_temp, hottest_countries, coldest_countries, choro_map
 
 app = Flask(__name__)
 
-# Load the model and scaler
-# model = pickle.load(open('weather_model.pkl', 'rb'))
-# scaler = pickle.load(open('scaler.pkl', 'rb'))
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# @app.route('/forecast')
-# def forecast():
-#     return render_template('forecast.html')
-
-# @app.route('/predictions')
-# def predictions():
-#     return render_template('predictions.html')
 
 @app.route('/interactive')
 def interactive():
@@ -65,6 +54,6 @@ def knn():
 def svm():
     return render_template('svm.html')
     
-
+    
 if __name__ == '__main__':
     app.run(debug=True)

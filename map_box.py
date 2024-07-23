@@ -1,10 +1,6 @@
 import pandas as pd
-import numpy as np
 import plotly.express as px
-from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-import ipywidgets as widgets
-from ipywidgets import interactive
 
 # Load dataset
 df = pd.read_csv('data/GlobalWeatherRepository.csv')
@@ -123,7 +119,7 @@ def choro_map():
         color="average_temperature",
         hover_name="country",
         color_continuous_scale=px.colors.sequential.Viridis,
-        projection="equal earth",
+        projection="natural earth",
         title="Temperaturas Medias Globales"
     )
     fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
