@@ -48,6 +48,22 @@ def bar_plot2():
 def map():
     plot = choro_map()
     return render_template('plot.html', plot=plot)
+
+@app.route('/linear_regression')
+def linear_regression():
+    return render_template('linear_regression.html')
+
+@app.route('/random_forest')
+def random_forest():
+    return render_template('random_forest.html')
+
+@app.route('/knn')
+def knn():
+    return render_template('knn.html')
+
+@app.route('/svm')
+def svm():
+    return render_template('svm.html')
     
 
 if __name__ == '__main__':
